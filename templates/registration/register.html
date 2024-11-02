@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Navbar Styling */
+    #navArea {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+      color: #fff;
+      font-size: 16px;
+      padding: 15px 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar-inverse .navbar-nav > li.active > a,
+    .navbar-inverse .navbar-nav > li > a:hover {
+      background-color: #555;
+      color: #ffcc00;
+    }
+
+    .navbar-toggle .icon-bar {
+      background-color: #fff;
+    }
+
+    .mobile-show {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-show {
+        display: inline;
+      }
+
+      .desktop-home {
+        display: none;
+      }
+    }
+
+    /* Form Styling */
+    form {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    form:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    form h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form textarea {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="password"]:focus,
+    form textarea:focus {
+      border-color: #ffcc00;
+      outline: none;
+      animation: pulse 0.5s;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.02);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    form button {
+      width: 100%;
+      background-color: #ffcc00;
+      color: #333;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: bounce 1s infinite;
+    }
+
+    form button:hover {
+      background-color: #e6b800;
+      transform: translateY(-2px);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    form p {
+      text-align: center;
+      color: rgb(76, 0, 255);
+    }
+  </style>
+</head>
+<body>
+  <h1>Register</h1>
+  {% if error %}
+    <p style="color: rgb(0, 102, 255);">{{ error }}</p>
+  {% endif %}
+  <form method="post" action="{% url 'register_page' %}">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

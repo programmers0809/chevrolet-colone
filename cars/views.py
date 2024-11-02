@@ -39,3 +39,4 @@ def detail_view(request, ):
     
     # Render the template with the item details
     return render(request, 'detail.html')
+

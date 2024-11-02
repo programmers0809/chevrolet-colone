@@ -19,7 +19,7 @@
         <title>UZ.Cars</title>
 
         <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href=""/{% static "logo/images.jfif" %}>
+		{% comment %} <link rel="shortcut icon" type="image/icon" href=""/{% static "logo/images.jfif" %}> {% endcomment %}
        
         <!--font-awesome.min.css-->
         <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
@@ -93,7 +93,7 @@
 									<li class="scroll"><a href="#featured-cars"><i class="fa fa-star"></i> featured cars</a></li>
 									<li class="scroll"><a href="#brand"><i class="fa fa-tags"></i> brands</a></li>
 									{% comment %} <li class="scroll"><a href="#contact"><i class="fa fa-envelope"></i> contact</a></li> {% endcomment %}
-									<li class="scroll"><a href="#user"><i class="fa fa-user"></i> user</a></li> <!-- Added user icon -->
+									<li class="scroll"><a href="#contact"><i class="fa fa-user"></i> user</a></li> <!-- Added user icon -->
 								</ul><!--/.nav -->
 							</div><!-- /.navbar-collapse -->
 						
@@ -381,7 +381,7 @@
 								<h2>about devloon</h2>
 								<ul>
 									<li><a href="#">hujat topshirish</a></li>
-									<li><a href="#">sharnoma</a></li>
+									<li><a href="{% url 'user_profile_page' %}">acvut</a></li>
 									<li><a href="#">ariza <span> topshirish</span></a></li>
 									<li><a href="#">shaxni tastiqlang</a></li>
 									<li><a href="{% url 'diler' %}">Diler</a></li>
@@ -404,9 +404,7 @@
 									
 									<div class="col-md-5 col-xs-6">
 										<ul>
-											{% for category in category_list %}
-												<li><a href="#">{{ category.name }}</a></li>
-											{% endfor %}
+										
 										</ul>
 									</div>
 								</div>
@@ -417,7 +415,9 @@
 								<h2>contact</h2>
 								<div class="footer-newsletter">
 								
-</div>
+</div>                        <form action="#" class="contact_form" method="POST">
+	{% csrf_token %}
+  
 								<div class="hm-foot-email">
 									<div class="foot-email-box">
 										<input type="text" class="form-control" placeholder="Add Name">
@@ -425,12 +425,7 @@
 									<div class="foot-email-box">
 										<input type="text" class="form-control" placeholder="Add Email">
 									</div><!--/.foot-email-box-->
-									<div class="foot-email-box">
-										<input type="text" class="form-control" placeholder="Add Phone Number">
-									</div><!--/.foot-email-box-->
-									<div class="foot-email-subscribe">
-										<span><i class="fa fa-arrow-right"></i></span>
-									</div><!--/.foot-email-icon-->
+								
 								</div><!--/.hm-foot-email-->
 								
 						</div>

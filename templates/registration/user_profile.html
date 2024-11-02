@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Custom CSS */
+
+    /* Navbar styling */
+    .navbar-inverse {
+      background-color: #2c3e50;
+      border-color: #1a242f;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+      color: #ecf0f1;
+    }
+    .navbar-inverse .navbar-nav > li > a:hover {
+      background-color: #34495e;
+    }
+    .dropdown-menu {
+      background-color: #34495e;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-menu > li > a {
+      color: #ecf0f1;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-menu > li > a:hover {
+      background-color: #2c3e50;
+    }
+
+    /* Profile container styling */
+    .profile-container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 30px;
+      background-color: #f9f9f9; 
+      border-radius: 10px; 
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+      animation: fadeInUp 0.5s ease-out;
+      text-align: center;
+    }
+    .profile-container h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .profile-container h2 {
+      color: #555;
+      margin: 5px 0;
+    }
+    .profile-container img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #4CAF50;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+    }
+    .profile-container a.btn {
+      color: #fff; 
+      background-color: #e74c3c; 
+      border: none; 
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 10px 0;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .profile-container a.btn:hover {
+      background-color: #c0392b;
+    }
+
+    /* Keyframe animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="navArea">
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> 
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav main_nav">
+        <li class="active">
+          <a href="{% url 'home_page' %}">
+            <span class="fa fa-home desktop-home"></span><span class="mobile-show"> Home</span>
+          </a>
+        </li>
+        <!-- Users Menu -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-user"></span> Users <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><span class="fa fa-user-circle"></span> Profile</a></li>
+            <li><a href="#"><span class="fa fa-cog"></span> Settings</a></li>
+            <li><a href="{% url 'logout_page' %}"><span class="fa fa-sign-out"></span> Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+<div class="profile-container">
+  <h1>User Profile</h1>
+  <h2>{{ user.username }}</h2>
+  
+  {% if profil_object.image %}
+    <img src="{{ profil_object.image.url }}" alt="Profile Image">
+  {% else %}
+    <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="Default Profile Image">
+  {% endif %}
+  
+  <h2>{{ user.first_name }}</h2>
+  <h2>{{ user.last_name }}</h2>
+  <h2>{{ user.email }}</h2>
+  <h2>{{ profil_object.birth_date }}</h2>
+  <h2>{{ profil_object.location }}</h2>
+
+  <a href="{% url 'user_edit' %}" class="btn">Edit Profile</a>
+  <a href="{% url 'change_password' %}" class="btn">Change Password</a>
+</div>
+
+<!-- Bootstrap JS (necessary for dropdowns) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
