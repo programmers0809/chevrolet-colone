@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diler Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 2px solid #f3c04a;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+        .card img {
+            width: 100%;
+            max-width: 150px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            align-self: flex-end;
+        }
+        .card h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .card p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+        .card .location-link {
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            color: #f3c04a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .location-link span {
+            margin-left: 8px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="{% url 'home_page' %}" style="color: blue; text-decoration: none;">Chevrolet</a>
+        <p>Your trusted partner for Chevrolet vehicles and services.</p>
+    </div>
+
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <!-- Navigation items can go here -->
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
+            </div>
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    
+    <div class="container">
+        <h1>TOSHKENT SHAHAR</h1>
+        <div class="card-grid">
+            <div class="card">
+                <h2>"UCHTEPA AVTOSAVDO" MCHJ</h2>
+                <p><strong>Manzil:</strong> Toshkent sh. Uchtepa tumani, Chilonzor-31, Guliston ko'chasi 8 b</p>
+                <p><strong>Tel:</strong> +99871 270 68 58, +99871 287 30 03</p>
+                <p><strong>E-mail:</strong> poytaxt-avtosavdo3@umail.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/1/XdBBaBLjqVjJMYe0o6vxfdFuH1AXpfNNMK7TO1wc.png" alt="UCHTEPA AVTOSAVDO">
+            </div>
+            <div class="card">
+                <h2>"POYTAKT AVTOSAVDO" MCHJ</h2>
+                <p><strong>Manzil:</strong> Toshkent sh. M. Ulug'bek tumani, M. Ulug'bek ko'chasi, 82a</p>
+                <p><strong>Tel:</strong> +99898 365 53 65, +99855 511 77 00</p>
+                <p><strong>E-mail:</strong> poytaxt-avtosavdo3@umail.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/2/mPZpoafPc4l3rCPGSwR73QWVv4bMjfenIPzhAzv7.jpg" alt="POYTAKT AVTOSAVDO">
+            </div>
+            <div class="card">
+                <h2>"SERGELI-AVTOTEXXIZMAT" MCHJ</h2>
+                <p><strong>Manzil:</strong> Sergeli tumani, Obihayot ko'chasi, 39 uy</p>
+                <p><strong>Tel:</strong> +99878 147 74 77</p>
+                <p><strong>E-mail:</strong> sergeliatx@umail.uz</p>
+                <p><strong>Web sayt:</strong> www.sergeli-auto.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/3/RvT7ogirdUjL7wr1SocAfAzlHzorbPGhOIqYqB0a.jpg" alt="SERGELI-AVTOTEXXIZMAT">
+            </div>
+            <div class="card">
+                <h2>"TOSHKENTDEU" MCHJ (ASACAR AUTOCENTER)</h2>
+                <p><strong>Manzil:</strong> Toshkent sh. Yakkasaroy tumani, Sh.Rustaveli ko'chasi, 152 a</p>
+                <p><strong>Tel:</strong> +99871 215 77 77, +99871 207 59 59</p>
+                <p><strong>E-mail:</strong> info@asacar.uz</p>
+                <p><strong>Web sayt:</strong> asacar.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/4/eJG4v8UOOOvRiwvvHeOP9XG4G1JZ4JXDQKQYQoh9.jpg" alt="TOSHKENTDEU">
+            </div>
+            <!-- New Dealers Added Below -->
+            <div class="card">
+                <h2>"TASHKENT AVTOSALON" MCHJ</h2>
+                <p><strong>Manzil:</strong> Toshkent sh. Yunusabad tumani, Bobur ko'chasi, 15</p>
+                <p><strong>Tel:</strong> +99871 123 45 67</p>
+                <p><strong>E-mail:</strong> tashkent-avtosalon@umail.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/6/caJJaUcsXYvMZL100frljpweUNaLWaxv60tyyZXW.jpg" alt="TASHKENT AVTOSALON">
+            </div>
+            <div class="card">
+                <h2>"SANOAT AVTO" MCHJ</h2>
+                <p><strong>Manzil:</strong> Toshkent sh. Chilonzor tumani, Sanoat ko'chasi, 22</p>
+                <p><strong>Tel:</strong> +99871 987 65 43</p>
+                <p><strong>E-mail:</strong> sanoat-avto@umail.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/17/TYHrMWaViZLU9VZouBSmzGEeDzPG7bU43dM70IRd.jpg" alt="SANOAT AVTO">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>SAMARQAND SHAHAR</h1>
+        <div class="card-grid">
+            <div class="card">
+                <h2>"SAMARQAND AVTOSAVDO" MCHJ</h2>
+                <p><strong>Manzil:</strong> Samarqand sh. Samarkand tumani, Ulughbek ko'chasi, 10</p>
+                <p><strong>Tel:</strong> +99866 123 45 67</p>
+                <p><strong>E-mail:</strong> samarqand-avtosavdo@umail.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/7/RCfw0y6hbsi0LU9mTuPpDcKXhRq4tX4bB2HFqHGF.jpg" alt="SAMARQAND AVTOSAVDO">
+            </div>
+            <div class="card">
+                <h2>"SAVDO MARKAZI" MCHJ</h2>
+                <p><strong>Manzil:</strong> Samarqand sh. Qiyomiddin ko'chasi, 25</p>
+                <p><strong>Tel:</strong> +99866 765 43 21</p>
+                <p><strong>E-mail:</strong> savdo-markazi@umail.uz</p>
+                <a href="#" class="location-link">Lokatsiyani ko'rmoq <span>&#8594;</span></a>
+                <img src="https://chevrolet.uz/storage/images/dealers/16/sNiTfKvlGrSYrTM3WBJS2sYp8MsLfsOI6Ysyi0kU.jpg" alt="SAVDO MARKAZI">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
