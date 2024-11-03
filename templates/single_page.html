@@ -71,11 +71,29 @@
         .submit-btn:hover {
             background-color: #45a049;
         }
+        nav {
+            background-color: #4CAF50;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <nav>
+        <a href="{% url 'home_page' %}">Home</a>
+    </nav>
     <h1>Car Model Name</h1>
     <img src="https://chevrolet.uz/assets/sale/chegirma/onix.jpg" alt="Car Image">
     <p>This is a brief description of the car, highlighting its features, design, and performance.</p>

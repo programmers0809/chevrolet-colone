@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaxsni Tasdiqlash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #28a745;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #218838;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Shaxsni Tasdiqlash</h2>
+        <nav>
+            <a href="{% url 'home_page' %}">Home</a>
+        </nav>
+    </header>
+    
+    <form action="submit_form.php" method="post">
+        <!-- Ism -->
+        <label for="ism">Ism:</label>
+        <input type="text" id="ism" name="ism" required>
+
+        <!-- Familiya -->
+        <label for="familiya">Familiya:</label>
+        <input type="text" id="familiya" name="familiya" required>
+
+        <!-- Tug'ilgan yil va sana -->
+        <label for="tugilgan_yil">Tug'ilgan yil:</label>
+        <input type="date" id="tugilgan_yil" name="tugilgan_yil" required>
+
+        <!-- Manzil -->
+        <label for="adres">Manzil:</label>
+        <input type="text" id="adres" name="adres" required>
+
+        <!-- Pasport berilgan joyi -->
+        <label for="pasport_joyi">Pasport berilgan joyi:</label>
+        <input type="text" id="pasport_joyi" name="pasport_joyi" required>
+
+        <!-- Pasport raqami -->
+        <label for="pasport_raqami">Pasport raqami:</label>
+        <input type="text" id="pasport_raqami" name="pasport_raqami" required>
+
+        <!-- Yuborish tugmasi -->
+        <button type="submit">Tasdiqlash</button>
+    </form>
+</body>
+</html>

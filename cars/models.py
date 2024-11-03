@@ -52,3 +52,18 @@ class CategoryModel(models.Model):
         managed = True
         verbose_name = 'Kategoriyalar'
         verbose_name_plural = 'Kategoriyalar'
+
+        
+class ContactModel(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Ism')
+    email = models.EmailField(max_length=254, verbose_name='Email')
+    message = models.TextField(verbose_name='Xabar')
+
+    def __str__(self) -> str:
+        return self.email
+
+    class Meta:
+        db_table = 'Contact'
+        managed = True
+        verbose_name = 'Aloqa'
+        verbose_name_plural = 'Aloqalar'

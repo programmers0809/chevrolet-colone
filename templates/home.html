@@ -114,7 +114,7 @@
 					<p>
 						masalan, Chevrolet Malibu yoki Chevrolet Tracker kabi modellarga qiziqayotgan bo'lsangiz, sizga yaxshi narxlarda qanday topish mumkinligini aytib bera olaman. Qanday yordam bera olishimni ayting!
 					</p>
-					<button class="welcome-btn" onclick="window.location.href='#'">contact us</button>
+					<button class="welcome-btn" onclick="window.location.href='{% url 'contact_page' %}'">contact us</button>
 				</div>
 			</div>
 
@@ -189,7 +189,7 @@
                                     <div class="new-cars-txt">
                                         <h2><a href="#">{{ news_car.name }} <span>{{ news_car.model }}</span></a></h2>
                                         <p>{{ news_car.body }}</p>
-                                        <button class="welcome-btn new-cars-btn" onclick="window.location.href='datail.html'">
+                                        <button class="welcome-btn new-cars-btn" onclick="window.location.href='{% url 'single_page' %}'">
                                             Ba'tafsil
                                         </button>
                                     </div>
@@ -238,7 +238,7 @@
                                 </div>
                             </div>
                             <div class="featured-cars-txt">
-                                <h2><a href="#">{{ news_car.name }}</a></h2>
+                                <h2><a href="{% url 'single_page' %}">{{ news_car.name }}</a></h2>
                                 <h3>{{ news_car.price }} {{news_car.price_type}}</h3>
                                 <p>{{ news_car.body | truncatewords:20}}</p>
                             </div>
@@ -380,10 +380,10 @@
 							<div class="single-footer-widget">
 								<h2>about devloon</h2>
 								<ul>
-									<li><a href="#">hujat topshirish</a></li>
+									<li><a href="{% url 'about' %}">about</a></li>
 									<li><a href="{% url 'user_profile_page' %}">acvut</a></li>
 									<li><a href="#">ariza <span> topshirish</span></a></li>
-									<li><a href="#">shaxni tastiqlang</a></li>
+									<li><a href="{% url 'sha_page' %}">shaxni tastiqlang</a></li>
 									<li><a href="{% url 'diler' %}">Diler</a></li>
 
 								</ul>
@@ -404,7 +404,11 @@
 									
 									<div class="col-md-5 col-xs-6">
 										<ul>
-										
+										<li><a href="{% url 'home_page' %}">home</a></li>
+
+										<li><a href="{% url 'contact_page' %}">contact</a></li>
+
+										<li><a href="{% url 'about' %}">about</a></li>
 										</ul>
 									</div>
 								</div>
@@ -415,18 +419,16 @@
 								<h2>contact</h2>
 								<div class="footer-newsletter">
 								
-</div>                        <form action="#" class="contact_form" method="POST">
-	{% csrf_token %}
+</div>                   
+
   
 								<div class="hm-foot-email">
-									<div class="foot-email-box">
-										<input type="text" class="form-control" placeholder="Add Name">
-									</div><!--/.foot-email-box-->
+								
 									<div class="foot-email-box">
 										<input type="text" class="form-control" placeholder="Add Email">
 									</div><!--/.foot-email-box-->
 								
-								</div><!--/.hm-foot-email-->
+								</div>
 								
 						</div>
 					</div>

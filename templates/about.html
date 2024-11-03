@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Chevrolet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Header styles */
+header {
+    background: #0056b3; /* Chevrolet blue */
+    color: #fff; /* White text */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Horizontal list items */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Main content styles */
+main {
+    max-width: 800px; /* Maximum width of the content */
+    margin: 20px auto; /* Center the content */
+    padding: 20px;
+    background: #fff; /* White background for content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+section img {
+    max-width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+    <header>
+        <h1>About Chevrolet.UZ</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home_page' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <!-- <li><a href="contact.html">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <img src="https://chevrolet.uz/storage/images/page_uz/3/c2ZnDHx5Tnk0O1VCEDHhWLWBo6AuzTyxgGXYI64t.jpg" alt="Chevrolet Car" width="600">
+            <p> 
+
+                Chevrolet kompaniyasi 1911 yil 3 noyabrda tashkil etilgan. U o'sha paytda General Motors korporatsiyasining ham egasi bo'lgan amerikalik tadbirkor Uilyam Duran (William Duran) va shveytsariyalik kelib chiqishi bo'lgan haydovchi, mexanik va avtomobil ishlab chiqaruvchisi Lui Chevrolet tomonidan tashkil etilgan.Taxmin qilish qiyin emas, Lui Chevroletning asosiy ishtiyoqi mashinalar edi. Bir kuni haydovchi Amerika avtomobil bozorining yirik o'yinchilari, jumladan Uilyam Duranning e'tiborini tortdi. Tadbirkor marketingning "ko'ruvchisi" edi va Chevrolet ning ismi savdoni oshirishga yordam beradi deb qaror qildi, shuning uchun kompaniyani uning nomi bilan nomlashga qaror qilindi.
+
+ 
+
+                Kompaniya muvaffaqiyatga ishonch bilan erishdi, ammo Dyurant va Chevrolet brend qadriyatlariga nisbatan turlicha qarashlarga ega edilar. Natijada, 1915 yilda Dyurant sherigidan ulushni sotib olishga qaror qildi. Avtomobillar savdosi o'sishda davom etdi. Bunday muvaffaqiyat Uilyam Duranni 1916 yilda General Motors kompaniyasining nazorat paketini sotib olishga va Chevrolet-ni bo'linmalardan biriga aylantirib, ulkan korporatsiya boshqaruvida bo'lishga undadi..</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Chevrolet. All rights reserved.</p>
+    </footer>
+</body>
+</html>
